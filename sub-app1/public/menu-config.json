@@ -1,0 +1,52 @@
+{
+  "appName": "第一个子应用",
+  "appPrefix": "/sub-app1",
+  "icon": "el-icon-bell",
+  "appMenus": [
+    {
+      "menuName": "一级菜单首页",
+      "path": "/",
+      "icon": "zht-icon-success"
+    },
+    {
+      "menuName": "一级菜单关于",
+      "path": "/about",
+      "icon": "el-icon-user",
+      "children": [
+        { "menuName": "二级菜单", "path": "/about/index","icon": "el-icon-user" },
+        {
+          "menuName":"二级菜单2",
+          "path": "/about/index/sub",
+          "icon": "el-icon-user",
+          "hidden": true,
+          "noDisplay": true
+        }
+      ]
+    },
+    {
+      "menuName": "一级菜单哈哈",
+      "path": "/home",
+      "icon": "el-icon-user",
+      "noDisplay": true
+    },
+    {
+      "menuName": "一级菜单lala",
+      "path": "/lala",
+      "icon": "el-icon-user",
+      "children": [
+        {
+          "menuName": "二级菜单aaa",
+          "path": "/lala/aaa",
+          "icon": "el-icon-user",
+          "children": [
+            {
+              "menuName": "三级菜单bbb",
+              "path": "/lala/aaa/bbb",
+              "icon": "el-icon-user"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
