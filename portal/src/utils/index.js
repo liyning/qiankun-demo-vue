@@ -1,6 +1,7 @@
 import store from '@/store'
 import { getCSSString } from './initTheme'
 import { removeToken } from './auth'
+import i18n from "@/assets/lang/index.js"
 // 监听浏览器关闭 和刷新
 export function pageIsClose() {
   let _beforeUnload_time = 0,
@@ -45,6 +46,12 @@ export async function setTheme(theme) {
   }
   body.className = theme + '-theme'
 }
+//修改系统语言
+export async function setLang(lang) {
+  console.log('-----------$i18n-----------',i18n)
+  i18n.locale = lang;
+}
+
 // 设置模板角色
 export function setLive2d(live2d) {
   setTimeout(() => {

@@ -16,13 +16,13 @@
           </div>
         </el-collapse-item>
       </el-collapse>
-      <el-collapse v-model="L2DNames" accordion>
-        <el-collapse-item title="模型角色" name="L2D">
-          <div class="change-theme">
-            <live2d />
-          </div>
-        </el-collapse-item>
-      </el-collapse>
+<!--      <el-collapse v-model="L2DNames" accordion>-->
+<!--        <el-collapse-item title="模型角色" name="L2D">-->
+<!--          <div class="change-theme">-->
+<!--            <live2d />-->
+<!--          </div>-->
+<!--        </el-collapse-item>-->
+<!--      </el-collapse>-->
     </div>
     
     <div class="update-time">{{ userInfo.systemUpdateTime }}</div>

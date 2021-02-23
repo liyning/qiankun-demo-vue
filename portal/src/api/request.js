@@ -4,7 +4,6 @@ import store from '../store'
 import { getToken } from '@/utils/auth'
 import { bindLeaveTips, unbindLeaveTips } from '@/utils'
 import { Message, Loading } from 'element-ui'
-
 const timeout = 60 // 秒
 const exportTimeout = 3600 * 1000
 

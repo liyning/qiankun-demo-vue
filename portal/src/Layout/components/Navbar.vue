@@ -10,9 +10,9 @@
       <top-nav />
     </div>
     <div class="right-avatar">
-      <span>appName：{{subAppParam}}</span>
+      <span>{{$t('app.appName')}}{{subAppParam}}</span>
 <!--      <i class="el-icon-question question" title="问卷调查" @click="$refs.question.comp.show = true"/>-->
-      <Weather />
+<!--      <Weather />-->
       <el-dropdown class="avatar-container" trigger="click" size="small" @command="handleCommand">
         <div class="avatar-wrapper">
           <p class="user-name">
@@ -24,7 +24,7 @@
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <el-dropdown-item command="userSettings">
-            <svg-icon icon-class="setting" style="margin-right: 5px;"/>个人设置
+            <svg-icon icon-class="setting" style="margin-right: 5px;"/>actions数据设置
           </el-dropdown-item>
           <el-dropdown-item command="themeSettings">
             <svg-icon icon-class="themeSetting" style="margin-right: 5px;"/>主题设置
@@ -32,6 +32,9 @@
 <!--          <el-dropdown-item command="wifi">-->
 <!--            <svg-icon icon-class="wifi" style="margin-right: 5px;"/>网络测速-->
 <!--          </el-dropdown-item>-->
+            <el-dropdown-item command="lang">
+              <svg-icon icon-class="setting" style="margin-right: 5px;"/>语言切换
+            </el-dropdown-item>
           <el-dropdown-item divided command="logout">
             <svg-icon icon-class="logout" style="margin-right: 5px;"/>退出登录
           </el-dropdown-item>
@@ -93,6 +96,9 @@ export default {
         case 'wifi':
           this.$refs.speedtest.comp.show = true
           break
+        case 'lang':
+          this.switchLang();
+          break
         case 'logout':
           this.$store.dispatch('fedLogOut').then(() => {
             const fullPath = this.$route.fullPath
@@ -102,6 +108,23 @@ export default {
           })
           break
       }
+    },
+    switchLang(){
+      console.log("vuexxxx-----",this.$store.getters.lang)
+      let local = this.$store.getters.lang || 'zh';
+      let selectedLang = (local == 'zh')?'en':'zh';
+      // if (seletedLang === local) return
+      // this.$toast.success(`切换${label}主题成功`)
+      this.$store.dispatch('changeLang', { lang:selectedLang }).then(() => {
+        this.$toast.success(`切换语言成功`)
+      });
+      actions.setGlobalState({lang: selectedLang});
+    },
+    changeTheme(theme, label, hidden) {
+      if (theme === this.theme || hidden) return
+      this.$store.dispatch('changeTheme', { theme }).then(() => {
+        this.$toast.success(`切换${label}主题成功`)
+      })
     }
   }
 }

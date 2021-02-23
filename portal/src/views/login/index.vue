@@ -63,32 +63,6 @@
             >登 录</el-button>
           </el-form-item>
         </el-form>
-        <div class="login-new-line">
-          <span>第三方登录</span>
-        </div>
-        <div class="login-in-way">
-          <ul class="clearfix">
-            <li class="in-way-dd" @click.stop="ddLogin">
-              <div class="recommd">推荐</div>
-              <div class="item">
-                <i style="color: #1296DB" class="zht-icon-shejiaodingding"></i>
-              </div>
-              <span>钉钉登录</span>
-            </li>
-            <li class="in-way-wx" @click.stop="wxLogin">
-              <div class="item">
-                <i style="width: 24px; color: #23BF36" class="zht-icon-icon-weixin"></i>
-              </div>
-              <span>微信登录</span>
-            </li>
-            <li class="in-way-sj" @click.stop="sjLogin">
-              <div class="item">
-                <i style="width: 24px; color: #FF9100" class="zht-icon-icon-shouji"></i>
-              </div>
-              <span>手机登录</span>
-            </li>
-          </ul>
-        </div>
       </div>
       
     </div>
@@ -206,7 +180,7 @@ export default {
   background-attachment: fixed;
   .login-box {
     width: 60%;
-    height: 400px;
+    height: 290px;
     margin: 0 auto;
     position: relative;
     top: 50%;

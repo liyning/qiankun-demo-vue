@@ -5,6 +5,7 @@ const getters = {
   drawer: state => state.app.drawer,
   theme: state => state.app.theme,
   themeColor: state => state.app.themeColor,
+  lang: state => state.app.lang,
   live2d: state => state.app.live2d,
   live2dOpts: state => state.app.live2dOpts,
   visitedViews: state => state.tagsView.visitedViews,

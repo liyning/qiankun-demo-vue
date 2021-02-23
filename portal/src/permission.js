@@ -40,7 +40,8 @@ const setTitle = ({appName, title}) => {
   document.title = `${appName || '应急物资平台'}${title?`-${title}`:''}`
 }
 router.beforeEach((to, from, next) => {
-  
+  console.log("store------------",store)
+
   // 更换document.title
   setTitle(to.meta)
   NProgress.start() // start progress bar

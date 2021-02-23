@@ -3,7 +3,7 @@
  */
 
 import Cookies from 'js-cookie'
-import { setTheme, setLive2d } from '@/utils'
+import { setTheme, setLive2d,setLang } from '@/utils'
 
 const app = {
   state: {
@@ -17,6 +17,7 @@ const app = {
     drawer: false,
     themeColor: Cookies.get('themeColor') || '',
     theme: Cookies.get('theme') || 'blackgold',
+    lang:Cookies.get('lang') || 'zh',
     live2d: Cookies.get('live2d') || 'haruto',
     live2dOpts: Cookies.get('live2dOpts')?JSON.parse(Cookies.get('live2dOpts')) : { show: true, position: 'left', width: 120, height: 220 },
     // themePicker: '',
@@ -52,6 +53,11 @@ const app = {
       Cookies.set('themeColor', color)
       state.themeColor = color
     },
+    CHANGE_LANG: (state, lang = state.lang) => {
+      Cookies.set('lang', lang)
+      state.lang = lang
+      setLang(lang)
+    },
     CHANGE_LIVE2D(state, live2d) {
       state.live2d = live2d
       Cookies.set('live2d', state.live2d)
@@ -80,6 +86,9 @@ const app = {
     },
     changeThemeColor({ commit }, color) {
       return commit('CHANGE_THEME_COLOR',color)
+    },
+    changeLang({ commit }, { lang }) {
+      return commit('CHANGE_LANG', lang)
     },
     changeLive2d({ commit }, live2d) {
       return commit('CHANGE_LIVE2D', live2d)

@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import actions from './actions'
+//国际化
+import i18n from "./assets/lang";
 import './public-path'
 Vue.config.productionTip = false
 let instance = null
@@ -10,6 +12,7 @@ const { name } = require('../package.json')
 function render (props = {}) {
   const { container } = props;
   instance = new Vue({
+    i18n,
     router,
     store,
     render: h => h(App)
@@ -39,6 +42,10 @@ export async function mount (props) {
   // eslint-disable-next-line no-console
   // console.log('子应用 加载完毕')
   actions.setActions(props);
+  actions.onGlobalStateChange((state) => { //监听全局状态
+    store.dispatch('changeLang', { lang:state.lang });
+    console.log("33333333333333333333",store.state.lang)
+  }, true);
   render(props)
 }
 export async function unmount () {

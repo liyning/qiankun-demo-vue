@@ -14,18 +14,26 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+//国际化
+import i18n from "./assets/lang";
+
 import './icons' // icon
 import './errorLog' // error log
 import './permission' // permission control
 
 import Toast from './components/Toast/index.js'
 
-Vue.use(ElementUI, { size: 'small' })
-Vue.use(Toast)
+import actions from './actions.js'
 
+Vue.use(ElementUI, {
+  size: 'small'
+})
+Vue.use(Toast)
+console.log("main999999999999999999",store)
 Vue.config.productionTip = false
 
 new Vue({
+  i18n,
   el: '#app',
   router,
   store,

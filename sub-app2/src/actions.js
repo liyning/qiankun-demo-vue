@@ -21,6 +21,7 @@ class Actions {
      * 映射
      */
     onGlobalStateChange(...args) {
+        console.log("app2 action",...args)
         return this.actions.onGlobalStateChange(...args);
     }
 
