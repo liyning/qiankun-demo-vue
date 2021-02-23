@@ -23,13 +23,13 @@ import './permission' // permission control
 
 import Toast from './components/Toast/index.js'
 
+import test from './test.js'
 import actions from './actions.js'
 
 Vue.use(ElementUI, {
   size: 'small'
 })
 Vue.use(Toast)
-console.log("main999999999999999999",store)
 Vue.config.productionTip = false
 
 new Vue({

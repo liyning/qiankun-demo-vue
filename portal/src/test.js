@@ -1,6 +1,6 @@
 // import { initGlobalState } from "qiankun";
 import store from './store'
-console.log('787878787878-------',store)
+console.log('---test-------',store)
 // import Cookies from "js-cookie";
 // const initialGlobalState = {
 //     //这里写初始化数据

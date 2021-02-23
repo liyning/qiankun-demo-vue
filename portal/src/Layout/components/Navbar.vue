@@ -53,7 +53,7 @@ import Hamburger from '@/components/Hamburger'
 import Weather from './Weather'
 import SpeedTest from '@/components/SpeedTest'
 import QuestionNaire from '@/components/QuestionNaire'
-import actions from '@/actions.js'
+// import actions from '@/actions.js'
 
 export default {
   components: {
@@ -69,10 +69,10 @@ export default {
     }
   },
   mounted() {
-    actions.onGlobalStateChange((state) => { //监听全局状态
-      this.subAppParam = state.appName
-      console.log("state.appName------------",state.appName)
-    }, true);
+    // actions.onGlobalStateChange((state) => { //监听全局状态
+    //   this.subAppParam = state.appName
+    //   console.log("state.appName------------",state.appName)
+    // }, true);
   },
   computed: {
     ...mapGetters([
