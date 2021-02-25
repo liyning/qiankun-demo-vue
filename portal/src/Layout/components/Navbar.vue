@@ -10,7 +10,7 @@
       <top-nav />
     </div>
     <div class="right-avatar">
-      <span>{{$t('app.appName')}}{{subAppParam}}</span>
+      <span>{{$t('app.appName')}}</span>
 <!--      <i class="el-icon-question question" title="问卷调查" @click="$refs.question.comp.show = true"/>-->
 <!--      <Weather />-->
       <el-dropdown class="avatar-container" trigger="click" size="small" @command="handleCommand">
@@ -53,7 +53,7 @@ import Hamburger from '@/components/Hamburger'
 import Weather from './Weather'
 import SpeedTest from '@/components/SpeedTest'
 import QuestionNaire from '@/components/QuestionNaire'
-// import actions from '@/actions.js'
+import actions from '@/actions.js'
 
 export default {
   components: {
@@ -65,15 +65,9 @@ export default {
   },
   data() {
     return {
-      subAppParam:"",
     }
   },
-  mounted() {
-    // actions.onGlobalStateChange((state) => { //监听全局状态
-    //   this.subAppParam = state.appName
-    //   console.log("state.appName------------",state.appName)
-    // }, true);
-  },
+
   computed: {
     ...mapGetters([
       'sidebar',
@@ -87,8 +81,8 @@ export default {
     handleCommand(command) {
       switch (command) {
         case 'userSettings':
-          // alert('个人设置中心')
-          actions.setGlobalState({mainParam:'主应用数据'})
+          alert('个人设置中心')
+          // actions.setGlobalState({mainParam:'主应用数据'})
           break
         case 'themeSettings':
           this.$store.dispatch('toggleDrawer')
@@ -118,7 +112,6 @@ export default {
       this.$store.dispatch('changeLang', { lang:selectedLang }).then(() => {
         this.$toast.success(`切换语言成功`)
       });
-      actions.setGlobalState({lang: selectedLang});
     },
     changeTheme(theme, label, hidden) {
       if (theme === this.theme || hidden) return

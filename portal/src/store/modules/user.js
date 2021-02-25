@@ -158,41 +158,7 @@ const user = {
                   icon: 'el-icon-user'
                 }
               ]
-            },
-            {
-              appName: '第三个子应用',
-              appPrefix: '/sub-app3',
-              // noDisplay: true,
-              appMenus: [
-                {
-                  menuName: '一级菜单',
-                  path: '/',
-                  icon: 'el-icon-user'
-                },
-                {
-                  menuName: '一级菜单',
-                  path: '/about',
-                  icon: 'el-icon-user'
-                }
-              ]
-            },
-            {
-              appName: '第四个子应用',
-              appPrefix: '/sub-app4',
-              // noDisplay: true,
-              appMenus: [
-                {
-                  menuName: '一级菜单',
-                  path: '/',
-                  icon: 'el-icon-user'
-                },
-                {
-                  menuName: '一级菜单',
-                  path: '/about',
-                  icon: 'el-icon-user'
-                }
-              ]
-            },
+            }
 
           ],
           mobile: '18811117311',

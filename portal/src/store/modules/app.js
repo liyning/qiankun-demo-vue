@@ -4,7 +4,7 @@
 
 import Cookies from 'js-cookie'
 import { setTheme, setLive2d,setLang } from '@/utils'
-
+import actions from "@/actions";
 const app = {
   state: {
     sidebar: {
@@ -55,6 +55,7 @@ const app = {
     },
     CHANGE_LANG: (state, lang = state.lang) => {
       Cookies.set('lang', lang)
+      actions.setGlobalState({lang: lang});
       state.lang = lang
       setLang(lang)
     },

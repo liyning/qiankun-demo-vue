@@ -17,7 +17,7 @@
 ** 需将服务器开启跨域 允许 请求静态文件 **
 ```
 修改 主项目 src/appInfos.js (可在基础模块中 编辑信息也行)
-{ name: 'sub-app3', entry: 'https://aistatic-dev.huiqulx.com/activity/index.html', href: '/sub-app3' },
+{ name: 'sub-app2', entry: 'https://aistatic-dev.huiqulx.com/activity/index.html', href: '/sub-app3' },
 ```
 *** 部署在二级目录时, /activity/ 为 二级目录名 ***
 ```

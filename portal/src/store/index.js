@@ -10,6 +10,7 @@ import errorLog from './modules/errorLog'
 import tagsView from './modules/tagsView'
 
 Vue.use(Vuex)
+console.log()
 
 export default new Vuex.Store({
   modules: {

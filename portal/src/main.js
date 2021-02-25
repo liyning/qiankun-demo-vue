@@ -23,7 +23,6 @@ import './permission' // permission control
 
 import Toast from './components/Toast/index.js'
 
-import test from './test.js'
 import actions from './actions.js'
 
 Vue.use(ElementUI, {
@@ -37,5 +36,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  actions,
   render: h => h(App)
 })
