@@ -1,4 +1,4 @@
-# 前端微服务 qiankun  demo https://github.com/liyning/qiankun-demo-vue
+# 前端微服务 qiankun  demo https://github.com/issochen/qiankun-vue-demo
 ### demo线上地址 账号密码 admin admin
 [demo地址](https://zht-test.zhonghuilv.net)
 ### qiankun文档
